@@ -1,0 +1,129 @@
+some tests, taken from <http://powerman.name/doc/asciidoc>
+
+
+Level 1
+-------
+Level 2
+~~~~~~~
+Level 3
+^^^^^^^
+Level 4
++++++++
+
+.Optional Title
+
+Usual
+paragraph.
+
+.Optional Title
+
+ Literal paragraph.
+  Must be indented.
+
+.Optional Title
+
+[source,perl]
+die 'connect: '.$dbh->errstr;
+
+Not a code in next paragraph.
+
+.Optional Title
+NOTE: This is an example
+      single-paragraph note.
+
+.Optional Title
+[NOTE]
+This is an example
+single-paragraph note.
+
+TIP: Tip.
+
+IMPORTANT: Important.
+
+WARNING: Warning.
+
+CAUTION: Caution.
+
+.Optional Title
+----
+*Listing* Block
+
+Use: code or file listings
+
+
+.Optional Title
+[source,perl]
+----
+# *Source* block
+# Use: highlight code listings
+# (require `source-highlight`)
+use DBI;
+my $dbh = DBI->connect('...',$u,$p)
+    or die "connect: $dbh->errstr";
+----
+
+.Optional Title
+****
+*Sidebar* Block
+
+Use: sidebar notes :)
+****
+
+.Optional Title
+==========================
+*Example* Block
+
+Use: examples :)
+
+Default caption "Example:"
+can be changed using
+
+ [caption="Custom: "]
+
+before example block.
+==========================
+
+.Optional Title
+[NOTE]
+===============================
+*NOTE* Block
+
+Use: multi-paragraph notes.
+===============================
+
+////
+*Comment* block
+
+Use: hide comments
+////
+
+	
+
+++++
+*Passthrough* Block
+<p>
+Use: backend-specific markup like
+<table border="1">
+<tr><td>1<td>2
+</table>
+++++
+
+ .Optional Title
+ ....
+ *Literal* Block
+
+ Use: workaround when literal
+ paragraph (indented) like
+   1. First.
+   2. Second.
+ incorrectly processed as list.
+ ....
+
+.Optional Title
+[quote, cite author, cite source]
+____
+*Quote* Block
+
+Use: cite somebody
+____
+
