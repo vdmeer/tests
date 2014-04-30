@@ -1,0 +1,2818 @@
+/*
+ * [The BSD License, http://www.opensource.org/licenses/bsd-license.php]
+ * Copyright (c) 2011-2011, Sven van der Meer <sven@vandermeer.de>
+ * All rights reserved.
+ *
+ * Redistribution  and  use  in  source  and  binary  forms,  with  or  without
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ *     + Redistributions of source code must retain the above copyright notice,
+ *       this list of conditions and the following disclaimer.
+ *     + Redistributions  in binary  form must  reproduce the  above copyright
+ *       notice, this list  of conditions and  the following disclaimer  in the
+ *       documentation and/or other materials provided with the distribution.
+ *     + Neither the name of the the author nor the names of its contributors
+ *       may be used to endorse or promote products derived from this software
+ *       without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS  IS"
+ * AND ANY EXPRESS  OR IMPLIED WARRANTIES,  INCLUDING, BUT NOT  LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY  AND FITNESS FOR A  PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN  NO EVENT SHALL  THE COPYRIGHT HOLDER  OR CONTRIBUTORS BE
+ * LIABLE  FOR  ANY  DIRECT,  INDIRECT,  INCIDENTAL,  SPECIAL,  EXEMPLARY,   OR
+ * CONSEQUENTIAL  DAMAGES  (INCLUDING,  BUT  NOT  LIMITED  TO,  PROCUREMENT  OF
+ * SUBSTITUTE GOODS  OR SERVICES;  LOSS OF  USE, DATA,  OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER  CAUSED AND  ON ANY  THEORY OF  LIABILITY, WHETHER  IN
+ * CONTRACT,  STRICT LIABILITY,  OR TORT  (INCLUDING NEGLIGENCE  OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE  USE OF THIS SOFTWARE, EVEN IF ADVISED  OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ */
+
+
+
+{
+  "characters":
+  {
+     "<sup>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "<sub>",
+        "latex"    : "$^{",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "</sup>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "</sub>",
+        "latex"    : "}$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+     "<b>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "<b>",
+        "latex"    : "\\textbf{",
+        "adciidoc" : "*",
+        "_descr"   : ""
+     },
+     "</b>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "</b>",
+        "latex"    : "}",
+        "adciidoc" : "*",
+        "_descr"   : ""
+     },
+
+     "<i>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "<i>",
+        "latex"    : "\\textit{",
+        "adciidoc" : "_",
+        "_descr"   : ""
+     },
+     "</i>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "</i>",
+        "latex"    : "}",
+        "adciidoc" : "_",
+        "_descr"   : ""
+     },
+
+     "<br>":
+     {
+        "asc7"     : "\n",
+        "utf8"     : "\n",
+        "html"     : "<br>",
+        "latex"    : "\\\\",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+     "<il>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "<il>",
+        "latex"    : "\\begin{enumerate}",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "</il>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "</il>",
+        "latex"    : "\\end{enumerate}",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+     "<ul>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "<ul>",
+        "latex"    : "\\begin{itemize}",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "</ul>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "</ul>",
+        "latex"    : "\\end{itemize}",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+
+     "<li>":
+     {
+        "asc7"     : "- ",
+        "utf8"     : "- ",
+        "html"     : "<li>",
+        "latex"    : "\\item",
+        "adciidoc" : "* ",
+        "_descr"   : ""
+     },
+     "</li>":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "</li>",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+
+     //ascii characters
+     "&#32;":
+     {
+        "asc7"     : " ",
+        "utf8"     : " ",
+        "html"     : "&#32;",
+        "latex"    : " ",
+        "adciidoc" : " ",
+        "_descr"   : "SPC"
+     },
+     "&#33;":
+     {
+        "asc7"     : "!",
+        "utf8"     : "!",
+        "html"     : "&#33;",
+        "latex"    : "!",
+        "adciidoc" : "!",
+        "_descr"   : "exclamation mark"
+     },
+     "&#34;":
+     {
+        "asc7"     : "\"",
+        "utf8"     : "\"",
+        "html"     : "&#34;",
+        "latex"    : "\"",
+        "adciidoc" : "\"",
+        "_descr"   : "double qoute"
+     },
+     "&#35;":
+     {
+        "asc7"     : "#",
+        "utf8"     : "#",
+        "html"     : "&#35;",
+        "latex"    : "\\#",
+        "adciidoc" : "#",
+        "_descr"   : "hash mark"
+     },
+     "&#36;":
+     {
+        "asc7"     : "$",
+        "utf8"     : "$",
+        "html"     : "&#36;",
+        "latex"    : "\\$",
+        "adciidoc" : "$",
+        "_descr"   : "dollar sign"
+     },
+     "&#37;":
+     {
+        "asc7"     : "%",
+        "utf8"     : "%",
+        "html"     : "&#37;",
+        "latex"    : "\\%",
+        "adciidoc" : "%",
+        "_descr"   : "percent"
+     },
+     "&#38;":
+     {
+        "asc7"     : "&",
+        "utf8"     : "&",
+        "html"     : "&#38;",
+        "latex"    : "\\&",
+        "adciidoc" : "&",
+        "_descr"   : "ampersand"
+     },
+     "&#40;":
+     {
+        "asc7"     : "(",
+        "utf8"     : "(",
+        "html"     : "&#40;",
+        "latex"    : "(",
+        "adciidoc" : "(",
+        "_descr"   : "opening bracket"
+     },
+     "&#41;":
+     {
+        "asc7"     : ")",
+        "utf8"     : ")",
+        "html"     : "&#41;",
+        "latex"    : ")",
+        "adciidoc" : ")",
+        "_descr"   : "closing bracket"
+     },
+     "&#42;":
+     {
+        "asc7"     : "*",
+        "utf8"     : "*",
+        "html"     : "&#42;",
+        "latex"    : "\\textasteriskcentered",
+        "adciidoc" : "*",
+        "_descr"   : "asterisk"
+     },
+     "&#43;":
+     {
+        "asc7"     : "+",
+        "utf8"     : "+",
+        "html"     : "&#43;",
+        "latex"    : "+",
+        "adciidoc" : "+",
+        "_descr"   : "plus sign"
+     },
+     "&#44;":
+     {
+        "asc7"     : ",",
+        "utf8"     : ",",
+        "html"     : "&#44;",
+        "latex"    : ",",
+        "adciidoc" : ",",
+        "_descr"   : "comma"
+     },
+     "&#45;":
+     {
+        "asc7"     : "-",
+        "utf8"     : "-",
+        "html"     : "&#45;",
+        "latex"    : "-",
+        "adciidoc" : "-",
+        "_descr"   : "minus sign"
+     },
+     "&#46;":
+     {
+        "asc7"     : ".",
+        "utf8"     : ".",
+        "html"     : "&#46;",
+        "latex"    : ".",
+        "adciidoc" : ".",
+        "_descr"   : "dot"
+     },
+     "&#47;":
+     {
+        "asc7"     : "/",
+        "utf8"     : "/",
+        "html"     : "&#47;",
+        "latex"    : "/",
+        "adciidoc" : "/",
+        "_descr"   : "forward slash"
+     },
+     "&#58;":
+     {
+        "asc7"     : ":",
+        "utf8"     : ":",
+        "html"     : "&#58;",
+        "latex"    : ":",
+        "adciidoc" : ":",
+        "_descr"   : "colon"
+     },
+     "&#59;":
+     {
+        "asc7"     : ";",
+        "utf8"     : ";",
+        "html"     : "&#59;",
+        "latex"    : ";",
+        "adciidoc" : ";",
+        "_descr"   : "semi colon"
+     },
+     "&#60;":
+     {
+        "asc7"     : "<",
+        "utf8"     : "<",
+        "html"     : "&#60;",
+        "latex"    : "\\textless",
+        "adciidoc" : "<",
+        "_descr"   : "less than"
+     },
+     "&#61;":
+     {
+        "asc7"     : "=",
+        "utf8"     : "=",
+        "html"     : "&#61;",
+        "latex"    : "=",
+        "adciidoc" : "=",
+        "_descr"   : "equal"
+     },
+     "&#62;":
+     {
+        "asc7"     : ">",
+        "utf8"     : ">",
+        "html"     : "&#62;",
+        "latex"    : "\\textgreater",
+        "adciidoc" : ">",
+        "_descr"   : "greater than"
+     },
+     "&#63;":
+     {
+        "asc7"     : "?",
+        "utf8"     : "?",
+        "html"     : "&#63;",
+        "latex"    : "?",
+        "adciidoc" : "?",
+        "_descr"   : "question mark"
+     },
+     "&#64;":
+     {
+        "asc7"     : "@",
+        "utf8"     : "@",
+        "html"     : "&#64;",
+        "latex"    : "@",
+        "adciidoc" : "@",
+        "_descr"   : "at sign"
+     },
+     "&#91;":
+     {
+        "asc7"     : "[",
+        "utf8"     : "[",
+        "html"     : "&#91;",
+        "latex"    : "\\[",
+        "adciidoc" : "[",
+        "_descr"   : "opening square bracket"
+     },
+     "&#92;":
+     {
+        "asc7"     : "\\",
+        "utf8"     : "\\",
+        "html"     : "&#92;",
+        "latex"    : "\\textbackslash",
+        "adciidoc" : "\\",
+        "_descr"   : "backward slash"
+     },
+     "&#93;":
+     {
+        "asc7"     : "]",
+        "utf8"     : "]",
+        "html"     : "&#93;",
+        "latex"    : "\\]",
+        "adciidoc" : "]",
+        "_descr"   : "closing square bracket"
+     },
+     "&#94;":
+     {
+        "asc7"     : "^",
+        "utf8"     : "^",
+        "html"     : "&#94;",
+        "latex"    : "\\textasciicircum",
+        "adciidoc" : "^",
+        "_descr"   : "circum flex"
+     },
+     "&#95;":
+     {
+        "asc7"     : "_",
+        "utf8"     : "_",
+        "html"     : "&#95;",
+        "latex"    : "\\_",
+        "adciidoc" : "_",
+        "_descr"   : "underscore"
+     },
+     "&#123;":
+     {
+        "asc7"     : "{",
+        "utf8"     : "{",
+        "html"     : "&#123;",
+        "latex"    : "\\{",
+        "adciidoc" : "{",
+        "_descr"   : "opening curly bracket"
+     },
+     "&#124;":
+     {
+        "asc7"     : "|",
+        "utf8"     : "|",
+        "html"     : "&#124;",
+        "latex"    : "\\textbar",
+        "adciidoc" : "|",
+        "_descr"   : "text bar"
+     },
+     "&#125;":
+     {
+        "asc7"     : "}",
+        "utf8"     : "}",
+        "html"     : "&#125;",
+        "latex"    : "\\}",
+        "adciidoc" : "}",
+        "_descr"   : "closing curly bracket"
+     },
+     "&#125;":
+     {
+        "asc7"     : "~",
+        "utf8"     : "~",
+        "html"     : "&#125;",
+        "latex"    : "\\textasciitilde",
+        "adciidoc" : "~",
+        "_descr"   : "tilde"
+     },
+
+
+     //html-named ascii characters
+     "&amp;":
+     {
+        "asc7"     : "&",
+        "utf8"     : "&",
+        "html"     : "&amp;",
+        "latex"    : "\\&",
+        "adciidoc" : "&",
+        "_descr"   : "ampersand"
+     },
+     "&lt;":
+     {
+        "asc7"     : "<",
+        "utf8"     : "<",
+        "html"     : "&lt;",
+        "latex"    : "\\textless",
+        "adciidoc" : "<",
+        "_descr"   : "less than"
+     },
+     "&gt;":
+     {
+        "asc7"     : ">",
+        "utf8"     : ">",
+        "html"     : "&gt;",
+        "latex"    : "\\textgreater",
+        "adciidoc" : ">",
+        "_descr"   : "greater than"
+     },
+     "&circ;":
+     {
+        "asc7"     : "^",
+        "utf8"     : "^",
+        "html"     : "&circ;",
+        "latex"    : "\\textasciicircum",
+        "adciidoc" : "^",
+        "_descr"   : "circum flex"
+     },
+     "&tilde;":
+     {
+        "asc7"     : "~",
+        "utf8"     : "~",
+        "html"     : "&tilde;",
+        "latex"    : "\\textasciitilde",
+        "adciidoc" : "~",
+        "_descr"   : "tilde"
+     },
+
+
+     //punctuation, qoutes
+     "&quot;":
+     {
+        "asc7"     : "\"",
+        "utf8"     : "\"",
+        "html"     : "&quot;",
+        "latex"    : "\"",
+        "adciidoc" : "\"",
+        "_descr"   : "double qoute"
+     },
+     "&lsquo;":
+     {
+        "asc7"     : "`",
+        "utf8"     : "`",
+        "html"     : "&lsquo;",
+        "latex"    : "`",
+        "adciidoc" : "`",
+        "_descr"   : "single qoute left"
+     },
+     "&96;":
+     {
+        "asc7"     : "`",
+        "utf8"     : "`",
+        "html"     : "&96;",
+        "latex"    : "`",
+        "adciidoc" : "`",
+        "_descr"   : "single qoute left"
+     },
+     "&rsquo;":
+     {
+        "asc7"     : "'",
+        "utf8"     : "'",
+        "html"     : "&rsquo;",
+        "latex"    : "'",
+        "adciidoc" : "'",
+        "_descr"   : "single qoute right"
+     },
+     "&39;":
+     {
+        "asc7"     : "'",
+        "utf8"     : "'",
+        "html"     : "&39;",
+        "latex"    : "'",
+        "adciidoc" : "'",
+        "_descr"   : "single qoute right"
+     },
+     "&sbquo;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sbquo;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : "single low-9"
+     },
+     "&bdquo;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&bdquo;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : "double low-9"
+     },
+     "&ldquo;":
+     {
+        "asc7"     : "``",
+        "utf8"     : "``",
+        "html"     : "&ldquo;",
+        "latex"    : "``",
+        "adciidoc" : "``",
+        "_descr"   : "double qoute left"
+     },
+     "&rdquo;":
+     {
+        "asc7"     : "''",
+        "utf8"     : "''",
+        "html"     : "&rdquo;",
+        "latex"    : "''",
+        "adciidoc" : "''",
+        "_descr"   : "double qoute right"
+     },
+     "&lsaquo;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lsaquo;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : "angewinkeltes <"
+     },
+     "&rsaquo;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rsaquo;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : "angewinkeltes >"
+     },
+
+
+     //accents grave
+     "&Agrave;":
+     {
+        "asc7"     : "À",
+        "utf8"     : "À",
+        "html"     : "&Agrave;",
+        "latex"    : "\\`{A}",
+        "adciidoc" : "À",
+        "_descr"   : "À"
+     },
+     "&agrave;":
+     {
+        "asc7"     : "à",
+        "utf8"     : "à",
+        "html"     : "&agrave;",
+        "latex"    : "\\`{a}",
+        "adciidoc" : "à",
+        "_descr"   : "à"
+     },
+     "&Egrave;":
+     {
+        "asc7"     : "È",
+        "utf8"     : "È",
+        "html"     : "&Egrave;",
+        "latex"    : "\\`{E}",
+        "adciidoc" : "È",
+        "_descr"   : "È"
+     },
+     "&egrave;":
+     {
+        "asc7"     : "è",
+        "utf8"     : "è",
+        "html"     : "&egrave;",
+        "latex"    : "\\`{e}",
+        "adciidoc" : "è",
+        "_descr"   : "è"
+     },
+     "&Igrave;":
+     {
+        "asc7"     : "Ì",
+        "utf8"     : "Ì",
+        "html"     : "&Igrave;",
+        "latex"    : "\\`{I}",
+        "adciidoc" : "Ì",
+        "_descr"   : "Ì"
+     },
+     "&igrave;":
+     {
+        "asc7"     : "ì",
+        "utf8"     : "ì",
+        "html"     : "&igrave;",
+        "latex"    : "\\`{i}",
+        "adciidoc" : "ì",
+        "_descr"   : "ì"
+     },
+     "&Ograve;":
+     {
+        "asc7"     : "Ò",
+        "utf8"     : "Ò",
+        "html"     : "&Ograve;",
+        "latex"    : "\\`{O}",
+        "adciidoc" : "Ò",
+        "_descr"   : "Ò"
+     },
+     "&ograve;":
+     {
+        "asc7"     : "ò",
+        "utf8"     : "ò",
+        "html"     : "&ograve;",
+        "latex"    : "\\`{o}",
+        "adciidoc" : "ò",
+        "_descr"   : "ò"
+     },
+     "&Ugrave;":
+     {
+        "asc7"     : "Ù",
+        "utf8"     : "Ù",
+        "html"     : "&Ugrave;",
+        "latex"    : "\\`{u}",
+        "adciidoc" : "Ù",
+        "_descr"   : "Ù"
+     },
+     "&ugrave;":
+     {
+        "asc7"     : "ù",
+        "utf8"     : "ù",
+        "html"     : "&ugrave;",
+        "latex"    : "\\`{u}",
+        "adciidoc" : "ù",
+        "_descr"   : "ù"
+     },
+
+
+     //accents acute
+     "&Aacute;":
+     {
+        "asc7"     : "Á",
+        "utf8"     : "Á",
+        "html"     : "&Aacute;",
+        "latex"    : "\\'{A}",
+        "adciidoc" : "Á",
+        "_descr"   : "Á"
+     },
+     "&aacute;":
+     {
+        "asc7"     : "á",
+        "utf8"     : "á",
+        "html"     : "&aacute;",
+        "latex"    : "\\'{a}",
+        "adciidoc" : "á",
+        "_descr"   : "á"
+     },
+     "&Eacute;":
+     {
+        "asc7"     : "É",
+        "utf8"     : "É",
+        "html"     : "&Eacute;",
+        "latex"    : "\\'{E}",
+        "adciidoc" : "É",
+        "_descr"   : "É"
+     },
+     "&eacute;":
+     {
+        "asc7"     : "é",
+        "utf8"     : "é",
+        "html"     : "&eacute;",
+        "latex"    : "\\'{e}",
+        "adciidoc" : "é",
+        "_descr"   : "é"
+     },
+     "&Iacute;":
+     {
+        "asc7"     : "Í",
+        "utf8"     : "Í",
+        "html"     : "&Iacute;",
+        "latex"    : "\\'{I}",
+        "adciidoc" : "Í",
+        "_descr"   : "Í"
+     },
+     "&iacute;":
+     {
+        "asc7"     : "í",
+        "utf8"     : "í",
+        "html"     : "&iacute;",
+        "latex"    : "\\'{i}",
+        "adciidoc" : "í",
+        "_descr"   : "í"
+     },
+     "&Oacute;":
+     {
+        "asc7"     : "Ó",
+        "utf8"     : "Ó",
+        "html"     : "&Oacute;",
+        "latex"    : "\\'{O}",
+        "adciidoc" : "Ó",
+        "_descr"   : "Ó"
+     },
+     "&oacute;":
+     {
+        "asc7"     : "ó",
+        "utf8"     : "ó",
+        "html"     : "&oacute;",
+        "latex"    : "\\'{o}",
+        "adciidoc" : "ó",
+        "_descr"   : "ó"
+     },
+     "&Uacute;":
+     {
+        "asc7"     : "Ú",
+        "utf8"     : "Ú",
+        "html"     : "&Uacute;",
+        "latex"    : "\\'{U}",
+        "adciidoc" : "Ú",
+        "_descr"   : "Ú"
+     },
+     "&uacute;":
+     {
+        "asc7"     : "ú",
+        "utf8"     : "ú",
+        "html"     : "&uacute;",
+        "latex"    : "\\'{u}",
+        "adciidoc" : "ú",
+        "_descr"   : "ú"
+     },
+     "&Yacute;":
+     {
+        "asc7"     : "Ý",
+        "utf8"     : "Ý",
+        "html"     : "&Yacute;",
+        "latex"    : "\\'{Y}",
+        "adciidoc" : "Ý",
+        "_descr"   : "Ý"
+     },
+     "&yacute;":
+     {
+        "asc7"     : "ý",
+        "utf8"     : "ý",
+        "html"     : "&yacute;",
+        "latex"    : "\\'{y}",
+        "adciidoc" : "ý",
+        "_descr"   : "ý"
+     },
+
+     //accents circumflex
+     "&Acirc;":
+     {
+        "asc7"     : "Â",
+        "utf8"     : "Â",
+        "html"     : "&Acirc;",
+        "latex"    : "\\^{A}",
+        "adciidoc" : "Â",
+        "_descr"   : "Â"
+     },
+     "&acirc;":
+     {
+        "asc7"     : "â",
+        "utf8"     : "â",
+        "html"     : "&acirc;",
+        "latex"    : "\\^{a}",
+        "adciidoc" : "â",
+        "_descr"   : "â"
+     },
+     "&Ecirc;":
+     {
+        "asc7"     : "Ê",
+        "utf8"     : "Ê",
+        "html"     : "&Ecirc;",
+        "latex"    : "\\^{E}",
+        "adciidoc" : "Ê",
+        "_descr"   : "Ê"
+     },
+     "&ecirc;":
+     {
+        "asc7"     : "ê",
+        "utf8"     : "ê",
+        "html"     : "&ecirc;",
+        "latex"    : "\\^{e}",
+        "adciidoc" : "ê",
+        "_descr"   : "ê"
+     },
+     "&Icirc;":
+     {
+        "asc7"     : "Î",
+        "utf8"     : "Î",
+        "html"     : "&Icirc;",
+        "latex"    : "\\^{I}",
+        "adciidoc" : "Î",
+        "_descr"   : "Î"
+     },
+     "&icirc;":
+     {
+        "asc7"     : "î",
+        "utf8"     : "î",
+        "html"     : "&icirc;",
+        "latex"    : "\\^{i}",
+        "adciidoc" : "î",
+        "_descr"   : "î"
+     },
+     "&Ocirc;":
+     {
+        "asc7"     : "Ô",
+        "utf8"     : "Ô",
+        "html"     : "&Ocirc;",
+        "latex"    : "\\^{O}",
+        "adciidoc" : "Ô",
+        "_descr"   : "Ô"
+     },
+     "&ocirc;":
+     {
+        "asc7"     : "ô",
+        "utf8"     : "ô",
+        "html"     : "&ocirc;",
+        "latex"    : "\\^{o}",
+        "adciidoc" : "ô",
+        "_descr"   : "ô"
+     },
+     "&Ucirc;":
+     {
+        "asc7"     : "Û",
+        "utf8"     : "Û",
+        "html"     : "&Ucirc;",
+        "latex"    : "\\^{U}",
+        "adciidoc" : "Û",
+        "_descr"   : "Û"
+     },
+     "&ucirc;":
+     {
+        "asc7"     : "û",
+        "utf8"     : "û",
+        "html"     : "&ucirc;",
+        "latex"    : "\\^{u}",
+        "adciidoc" : "û",
+        "_descr"   : "û"
+     },
+
+
+     //accents tilde
+     "&Atilde;":
+     {
+        "asc7"     : "Ã",
+        "utf8"     : "Ã",
+        "html"     : "&Atilde;",
+        "latex"    : "\\~{A}",
+        "adciidoc" : "Ã",
+        "_descr"   : "Ã"
+     },
+     "&atilde;":
+     {
+        "asc7"     : "ã",
+        "utf8"     : "ã",
+        "html"     : "&atilde;",
+        "latex"    : "\\~{a}",
+        "adciidoc" : "ã",
+        "_descr"   : "ã"
+     },
+     "&Ntilde;":
+     {
+        "asc7"     : "Ñ",
+        "utf8"     : "Ñ",
+        "html"     : "&Atilde;",
+        "latex"    : "\\~{N}",
+        "adciidoc" : "Ñ",
+        "_descr"   : "Ñ"
+     },
+     "&ntilde;":
+     {
+        "asc7"     : "ñ",
+        "utf8"     : "ñ",
+        "html"     : "&ntilde;",
+        "latex"    : "\\~{n}",
+        "adciidoc" : "ñ",
+        "_descr"   : "ñ"
+     },
+     "&Otilde;":
+     {
+        "asc7"     : "Õ",
+        "utf8"     : "Õ",
+        "html"     : "&Atilde;",
+        "latex"    : "\\~{O}",
+        "adciidoc" : "Õ",
+        "_descr"   : "Õ"
+     },
+     "&otilde;":
+     {
+        "asc7"     : "Õ",
+        "utf8"     : "Õ",
+        "html"     : "&otilde;",
+        "latex"    : "\\~{o}",
+        "adciidoc" : "Õ",
+        "_descr"   : "Õ"
+     },
+
+
+     //accents umlaut
+     "&Auml;":
+     {
+        "asc7"     : "Ä",
+        "utf8"     : "Ä",
+        "html"     : "&Auml;",
+        "latex"    : "\\\"{A}",
+        "adciidoc" : "Ä",
+        "_descr"   : "Ä"
+     },
+     "&auml;":
+     {
+        "asc7"     : "ä",
+        "utf8"     : "ä",
+        "html"     : "&auml;",
+        "latex"    : "\\\"{a}",
+        "adciidoc" : "ä",
+        "_descr"   : "ä"
+     },
+     "&Euml;":
+     {
+        "asc7"     : "Ë",
+        "utf8"     : "Ë",
+        "html"     : "&Euml;",
+        "latex"    : "\\\"{E}",
+        "adciidoc" : "Ë",
+        "_descr"   : "Ë"
+     },
+     "&euml;":
+     {
+        "asc7"     : "ë",
+        "utf8"     : "ë",
+        "html"     : "&euml;",
+        "latex"    : "\\\"{e}",
+        "adciidoc" : "ë",
+        "_descr"   : "ë"
+     },
+     "&Iuml;":
+     {
+        "asc7"     : "Ï",
+        "utf8"     : "Ï",
+        "html"     : "&Iuml;",
+        "latex"    : "\\\"{I}",
+        "adciidoc" : "Ï",
+        "_descr"   : "Ï"
+     },
+     "&iuml;":
+     {
+        "asc7"     : "ï",
+        "utf8"     : "ï",
+        "html"     : "&iuml;",
+        "latex"    : "\\\"{i}",
+        "adciidoc" : "ï",
+        "_descr"   : "ï"
+     },
+     "&Ouml;":
+     {
+        "asc7"     : "Ö",
+        "utf8"     : "Ö",
+        "html"     : "&Ouml;",
+        "latex"    : "\\\"{O}",
+        "adciidoc" : "Ö",
+        "_descr"   : "Ö"
+     },
+     "&ouml;":
+     {
+        "asc7"     : "ö",
+        "utf8"     : "ö",
+        "html"     : "&ouml;",
+        "latex"    : "\\\"{o}",
+        "adciidoc" : "ö",
+        "_descr"   : "ö"
+     },
+     "&Uuml;":
+     {
+        "asc7"     : "Ü",
+        "utf8"     : "Ü",
+        "html"     : "&Uuml;",
+        "latex"    : "\\\"{U}",
+        "adciidoc" : "Ü",
+        "_descr"   : "Ü"
+     },
+     "&uuml;":
+     {
+        "asc7"     : "ü",
+        "utf8"     : "ü",
+        "html"     : "&uuml;",
+        "latex"    : "\\\"{u}",
+        "adciidoc" : "ü",
+        "_descr"   : "ü"
+     },
+     "&Yuml;":
+     {
+        "asc7"     : "Ÿ",
+        "utf8"     : "Ÿ",
+        "html"     : "&Yuml;",
+        "latex"    : "\\\"{Y}",
+        "adciidoc" : "Ÿ",
+        "_descr"   : "Ÿ"
+     },
+     "&yuml;":
+     {
+        "asc7"     : "ÿ",
+        "utf8"     : "ÿ",
+        "html"     : "&yuml;",
+        "latex"    : "\\\"{y}",
+        "adciidoc" : "ÿ",
+        "_descr"   : "ÿ"
+     },
+
+
+     //accents ring
+     "&Aring;":
+     {
+        "asc7"     : "Å",
+        "utf8"     : "Å",
+        "html"     : "&Aring;",
+        "latex"    : "\\AA",
+        "adciidoc" : "Å",
+        "_descr"   : "Å"
+     },
+     "&aring;":
+     {
+        "asc7"     : "å",
+        "utf8"     : "å",
+        "html"     : "&aring;",
+        "latex"    : "\\aa",
+        "adciidoc" : "å",
+        "_descr"   : "å"
+     },
+
+
+
+     "&AElig;":
+     {
+        "asc7"     : "Æ",
+        "utf8"     : "Æ",
+        "html"     : "&AElig;",
+        "latex"    : "\\AE",
+        "adciidoc" : "Æ",
+        "_descr"   : "Æ"
+     },
+     "&aelig;":
+     {
+        "asc7"     : "æ",
+        "utf8"     : "æ",
+        "html"     : "&aelig;",
+        "latex"    : "\\ae",
+        "adciidoc" : "æ",
+        "_descr"   : "æ"
+     },
+     "&OElig;":
+     {
+        "asc7"     : "Œ",
+        "utf8"     : "Œ",
+        "html"     : "&OElig;",
+        "latex"    : "\\OE",
+        "adciidoc" : "Œ",
+        "_descr"   : "Œ"
+     },
+     "&oelig;":
+     {
+        "asc7"     : "œ",
+        "utf8"     : "œ",
+        "html"     : "&oelig;",
+        "latex"    : "\\oe",
+        "adciidoc" : "œ",
+        "_descr"   : "œ"
+     },
+
+
+
+     "&Ccedil;":
+     {
+        "asc7"     : "Ç",
+        "utf8"     : "Ç",
+        "html"     : "&Ccedil;",
+        "latex"    : "\\c{C}",
+        "adciidoc" : "Ç",
+        "_descr"   : "Ç"
+     },
+     "&ccedil;":
+     {
+        "asc7"     : "ç",
+        "utf8"     : "ç",
+        "html"     : "&ccedil;",
+        "latex"    : "\\c{c}",
+        "adciidoc" : "ç",
+        "_descr"   : "ç"
+     },
+
+
+
+     "&ETH;":
+     {
+        "asc7"     : "Ð",
+        "utf8"     : "Ð",
+        "html"     : "&ETH;",
+        "latex"    : "\\DH",
+        "adciidoc" : "Ð",
+        "_descr"   : "Ð"
+     },
+     "&eth;":
+     {
+        "asc7"     : "ð",
+        "utf8"     : "ð",
+        "html"     : "&eth;",
+        "latex"    : "\\dh",
+        "adciidoc" : "ð",
+        "_descr"   : "ð"
+     },
+
+
+
+     "&Oslash;":
+     {
+        "asc7"     : "Ø",
+        "utf8"     : "Ø",
+        "html"     : "&Oslash;",
+        "latex"    : "\\O",
+        "adciidoc" : "Ø",
+        "_descr"   : "Ø"
+     },
+     "&oslash;":
+     {
+        "asc7"     : "ø",
+        "utf8"     : "ø",
+        "html"     : "&oslash;",
+        "latex"    : "\\o",
+        "adciidoc" : "ø",
+        "_descr"   : "ø"
+     },
+
+
+
+     "&THORN;":
+     {
+        "asc7"     : "þ",
+        "utf8"     : "þ",
+        "html"     : "&THORN;",
+        "latex"    : "\\TH",
+        "adciidoc" : "þ",
+        "_descr"   : "þ"
+     },
+     "&thorn;":
+     {
+        "asc7"     : "Þ",
+        "utf8"     : "Þ",
+        "html"     : "&thorn;",
+        "latex"    : "\\th",
+        "adciidoc" : "Þ",
+        "_descr"   : "Þ"
+     },
+
+
+
+     "&szlig;":
+     {
+        "asc7"     : "ß",
+        "utf8"     : "ß",
+        "html"     : "&szlig;",
+        "latex"    : "\\ss",
+        "adciidoc" : "ß",
+        "_descr"   : "ß"
+     },
+
+
+
+//    '&LLL;' => '\\L', // L-
+//    '&lll;' => '\\l', // l-
+
+
+
+     "&Scaron;":
+     {
+        "asc7"     : "Š",
+        "utf8"     : "Š",
+        "html"     : "&Scaron;",
+        "latex"    : "\\v{S}",
+        "adciidoc" : "Š",
+        "_descr"   : "Š"
+     },
+     "&scaron;":
+     {
+        "asc7"     : "š",
+        "utf8"     : "š",
+        "html"     : "&scaron;",
+        "latex"    : "\\v{s}",
+        "adciidoc" : "š",
+        "_descr"   : "š"
+     },
+
+
+
+    '&fnof;'   => null,    // ƒ
+
+
+
+     "&nbsp;":
+     {
+        "asc7"     : " ",
+        "utf8"     : " ",
+        "html"     : "&nbsp;",
+        "latex"    : "~",
+        "adciidoc" : " ",
+        "_descr"   : "non breakable space"
+     },
+     "&#160;":
+     {
+        "asc7"     : " ",
+        "utf8"     : " ",
+        "html"     : "&#160;",
+        "latex"    : "~",
+        "adciidoc" : " ",
+        "_descr"   : "non breakable space"
+     },
+     "&iexcl;":
+     {
+        "asc7"     : "¡",
+        "utf8"     : "¡",
+        "html"     : "&iexcl;",
+        "latex"    : "\\textexclamdown",
+        "adciidoc" : "¡",
+        "_descr"   : "¡"
+     },
+     "&cent;":
+     {
+        "asc7"     : "¢",
+        "utf8"     : "¢",
+        "html"     : "&cent;",
+        "latex"    : "\\cent",
+        "adciidoc" : "¢",
+        "_descr"   : "¢"
+     },
+     "&pound;":
+     {
+        "asc7"     : "£",
+        "utf8"     : "£",
+        "html"     : "&pound;",
+        "latex"    : "{\\pounds}",
+        "adciidoc" : "£",
+        "_descr"   : "£"
+     },
+     "&curren;":
+     {
+        "asc7"     : "¤",
+        "utf8"     : "¤",
+        "html"     : "&curren;",
+        "latex"    : "\\currency",
+        "adciidoc" : "¤",
+        "_descr"   : "¤"
+     },
+     "&yen;":
+     {
+        "asc7"     : "¥",
+        "utf8"     : "¥",
+        "html"     : "&yen;",
+        "latex"    : "",
+        "adciidoc" : "¥",
+        "_descr"   : "¥"
+     },
+     "&brvbar;":
+     {
+        "asc7"     : "¦",
+        "utf8"     : "¦",
+        "html"     : "&brvbar;",
+        "latex"    : "",
+        "adciidoc" : "¦",
+        "_descr"   : "¦"
+     },
+     "&sect;":
+     {
+        "asc7"     : "§",
+        "utf8"     : "§",
+        "html"     : "&sect;",
+        "latex"    : "{\\S}",
+        "adciidoc" : "§",
+        "_descr"   : "§"
+     },
+     "&uml;":
+     {
+        "asc7"     : "¨",
+        "utf8"     : "¨",
+        "html"     : "&uml;",
+        "latex"    : "",
+        "adciidoc" : "¨",
+        "_descr"   : "¨"
+     },
+     "&copy;":
+     {
+        "asc7"     : "©",
+        "utf8"     : "©",
+        "html"     : "&copy;",
+        "latex"    : "{\\copyright}",  // -- alternative: {\textcopyright}
+        "adciidoc" : "©",
+        "_descr"   : "©"
+     },
+     "&ordf;":
+     {
+        "asc7"     : "ª",
+        "utf8"     : "ª",
+        "html"     : "&ordf;",
+        "latex"    : "\\textordfeminine",
+        "adciidoc" : "ª",
+        "_descr"   : "ª"
+     },
+     "&laquo;":
+     {
+        "asc7"     : "«",
+        "utf8"     : "«",
+        "html"     : "&laquo;",
+        "latex"    : "",
+        "adciidoc" : "«",
+        "_descr"   : "«"
+     },
+     "&not;":
+     {
+        "asc7"     : "¬",
+        "utf8"     : "¬",
+        "html"     : "&not;",
+        "latex"    : "",
+        "adciidoc" : "¬",
+        "_descr"   : "¬"
+     },
+     "&shy;":
+     {
+        "asc7"     : "­",
+        "utf8"     : "­",
+        "html"     : "&shy;",
+        "latex"    : "",
+        "adciidoc" : "­",
+        "_descr"   : "­"
+     },
+     "&reg;":
+     {
+        "asc7"     : "®",
+        "utf8"     : "®",
+        "html"     : "&reg;",
+        "latex"    : "{\\textregistered}",
+        "adciidoc" : "®",
+        "_descr"   : "®"
+     },
+     "&macr;":
+     {
+        "asc7"     : "¯",
+        "utf8"     : "¯",
+        "html"     : "&macr;",
+        "latex"    : "",
+        "adciidoc" : "¯",
+        "_descr"   : "¯"
+     },
+     "&deg;":
+     {
+        "asc7"     : "°",
+        "utf8"     : "°",
+        "html"     : "&deg;",
+        "latex"    : "",
+        "adciidoc" : "°",
+        "_descr"   : "°"
+     },
+     "&plusmn;":
+     {
+        "asc7"     : "±",
+        "utf8"     : "±",
+        "html"     : "&plusmn;",
+        "latex"    : "",
+        "adciidoc" : "±",
+        "_descr"   : "±"
+     },
+     "&sup2;":
+     {
+        "asc7"     : "²",
+        "utf8"     : "²",
+        "html"     : "&sup2;",
+        "latex"    : "",
+        "adciidoc" : "²",
+        "_descr"   : "²"
+     },
+     "&sup3;":
+     {
+        "asc7"     : "³",
+        "utf8"     : "³",
+        "html"     : "&sup3;",
+        "latex"    : "",
+        "adciidoc" : "³",
+        "_descr"   : "³"
+     },
+     "&acute;":
+     {
+        "asc7"     : "´",
+        "utf8"     : "´",
+        "html"     : "&acute;",
+        "latex"    : "",
+        "adciidoc" : "´",
+        "_descr"   : "´"
+     },
+     "&micro;":
+     {
+        "asc7"     : "µ",
+        "utf8"     : "µ",
+        "html"     : "&micro;",
+        "latex"    : "",
+        "adciidoc" : "µ",
+        "_descr"   : "µ"
+     },
+     "&para;":
+     {
+        "asc7"     : "¶",
+        "utf8"     : "¶",
+        "html"     : "&para;",
+        "latex"    : "\\P",
+        "adciidoc" : "¶",
+        "_descr"   : "¶"
+     },
+     "&middot;":
+     {
+        "asc7"     : "·",
+        "utf8"     : "·",
+        "html"     : "&middot;",
+        "latex"    : "",
+        "adciidoc" : "·",
+        "_descr"   : "·"
+     },
+     "&cedil;":
+     {
+        "asc7"     : "¸",
+        "utf8"     : "¸",
+        "html"     : "&cedil;",
+        "latex"    : "",
+        "adciidoc" : "¸",
+        "_descr"   : "¸"
+     },
+     "&sup1;":
+     {
+        "asc7"     : "¹",
+        "utf8"     : "¹",
+        "html"     : "&sup1;",
+        "latex"    : "",
+        "adciidoc" : "¹",
+        "_descr"   : "¹"
+     },
+     "&ordm;":
+     {
+        "asc7"     : "º",
+        "utf8"     : "º",
+        "html"     : "&ordm;",
+        "latex"    : "\\textordmasculine",
+        "adciidoc" : "º",
+        "_descr"   : "º"
+     },
+     "&raquo;":
+     {
+        "asc7"     : "»",
+        "utf8"     : "»",
+        "html"     : "&raquo;",
+        "latex"    : "",
+        "adciidoc" : "»",
+        "_descr"   : "»"
+     },
+     "&frac14;":
+     {
+        "asc7"     : "¼",
+        "utf8"     : "¼",
+        "html"     : "&frac14;",
+        "latex"    : "\\textordmasculine",
+        "adciidoc" : "¼",
+        "_descr"   : "¼"
+     },
+     "&frac12;":
+     {
+        "asc7"     : "½",
+        "utf8"     : "½",
+        "html"     : "&frac12;",
+        "latex"    : "",
+        "adciidoc" : "½",
+        "_descr"   : "½"
+     },
+     "&frac34;":
+     {
+        "asc7"     : "¾",
+        "utf8"     : "¾",
+        "html"     : "&frac34;",
+        "latex"    : "",
+        "adciidoc" : "¾",
+        "_descr"   : "¾"
+     },
+     "&iquest;":
+     {
+        "asc7"     : "¿",
+        "utf8"     : "¿",
+        "html"     : "&iquest;",
+        "latex"    : "\\textquestiondown",
+        "adciidoc" : "¿",
+        "_descr"   : "¿"
+     },
+     "&times;":
+     {
+        "asc7"     : "×",
+        "utf8"     : "×",
+        "html"     : "&times;",
+        "latex"    : "",
+        "adciidoc" : "×",
+        "_descr"   : "×"
+     },
+     "&divide;":
+     {
+        "asc7"     : "÷",
+        "utf8"     : "÷",
+        "html"     : "&divide;",
+        "latex"    : "",
+        "adciidoc" : "÷",
+        "_descr"   : "÷"
+     },
+
+
+
+     //technical symbols
+     "&lceil;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lceil;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&rceil;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rceil;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&lfloor;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lfloor;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&rfloor;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rfloor;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&lang;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lang;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&rang;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rang;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+
+
+     //arrow symbols
+     "&larr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&larr;",
+        "latex"    : "\\(\\leftarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&uarr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&uarr;",
+        "latex"    : "\\(\\uparrow\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&rarr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rarr;",
+        "latex"    : "\\(\\rightarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&darr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&darr;",
+        "latex"    : "\\(\\downarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+
+
+     "&harr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&harr;",
+        "latex"    : "\\(\\leftrightarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&crarr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&crarr;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&lArr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lArr;",
+        "latex"    : "\\(\\Leftarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&uArr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&uArr;",
+        "latex"    : "\\(\\Uparrow\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&rArr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rArr;",
+        "latex"    : "\\(\\Rightarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+     "&dArr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&dArr;",
+        "latex"    : "\\(\\Downarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&hArr;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&hArr;",
+        "latex"    : "\\(\\Leftrightarrow{}\\)",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+
+
+     //symbols misc
+     "&bull;":
+     {
+        "asc7"     : "•",
+        "utf8"     : "•",
+        "html"     : "&bull;",
+        "latex"    : "",
+        "adciidoc" : "•",
+        "_descr"   : "•"
+     },
+     "&prime;":
+     {
+        "asc7"     : "'",
+        "utf8"     : "'",
+        "html"     : "&prime;",
+        "latex"    : "",
+        "adciidoc" : "'",
+        "_descr"   : "'"
+     },
+     "&Prime;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Prime;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&oline;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&oline;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&frasl;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&frasl;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&weierp;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&weierp;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&image;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&image;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&real;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&real;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&trade;":
+     {
+        "asc7"     : "™",
+        "utf8"     : "™",
+        "html"     : "&trade;",
+        "latex"    : "{\\texttrademark}",
+        "adciidoc" : "™",
+        "_descr"   : "™"
+     },
+     "&euro;":
+     {
+        "asc7"     : "€",
+        "utf8"     : "€",
+        "html"     : "&euro;",
+        "latex"    : "{\\euro}",
+        "adciidoc" : "€",
+        "_descr"   : "€"
+     },
+     "&alefsym;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&alefsym;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&spades;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&spades;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&clubs;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&clubs;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&hearts;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&hearts;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&diams;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&diams;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+
+
+     //punctation
+     "&ensp;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&ensp;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&emsp;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&emsp;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&thinsp;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&thinsp;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&zwnj;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&zwnj;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&zwj;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&zwj;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&lrm;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lrm;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&rlm;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rlm;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&ndash;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&ndash;",
+        "latex"    : "--",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&mdash;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&mdash;",
+        "latex"    : "---",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&dagger;":
+     {
+        "asc7"     : "†",
+        "utf8"     : "†",
+        "html"     : "&dagger;",
+        "latex"    : "\\dag",
+        "adciidoc" : "†",
+        "_descr"   : "†"
+     },
+     "&Dagger;":
+     {
+        "asc7"     : "‡",
+        "utf8"     : "‡",
+        "html"     : "&Dagger;",
+        "latex"    : "\\ddag",
+        "adciidoc" : "‡",
+        "_descr"   : "‡"
+     },
+
+     "&hellip;":
+     {
+        "asc7"     : "…",
+        "utf8"     : "…",
+        "html"     : "&hellip;",
+        "latex"    : "{\\dots}",
+        "adciidoc" : "…",
+        "_descr"   : "…"
+     },
+     "&permil;":
+     {
+        "asc7"     : "‰",
+        "utf8"     : "‰",
+        "html"     : "&permil;",
+        "latex"    : "",
+        "adciidoc" : "‰",
+        "_descr"   : "‰"
+     },
+
+
+
+     //mathematical signs
+     "&forall;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&forall;",
+        "latex"    : "$\\forall$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&part;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&part;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&exist;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&exist;",
+        "latex"    : "$\\exists$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&empty;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&empty;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&nabla;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&nabla;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&isin;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&isin;",
+        "latex"    : "$\\in$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&notin;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&notin;",
+        "latex"    : "$\\notin$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&ni;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&ni;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&prod;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&prod;",
+        "latex"    : "$\\prod$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sum;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sum;",
+        "latex"    : "$\\sum$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&minus;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&minus;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&lowast;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lowast;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&radic;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&radic;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&prop;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&prop;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&infin;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&infin;",
+        "latex"    : "$\\infty$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&ang;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&ang;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&and;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&and;",
+        "latex"    : "$\\wedge$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&or;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&or;",
+        "latex"    : "$\\vee$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&cap;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&cap;",
+        "latex"    : "$\\cap$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&cup;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&cup;",
+        "latex"    : "$\\cup$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&int;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&int;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&there4;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&there4;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sim;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sim;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&cong;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&cong;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&asymp;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&asymp;",
+        "latex"    : "$\\approx{}$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&ne;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&ne;",
+        "latex"    : "$\\neq$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&equiv;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&equiv;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&le;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&le;",
+        "latex"    : "$\\leq$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&ge;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&ge;",
+        "latex"    : "$\\geq$",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sub;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sub;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sup;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sup;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&nsub;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&nsub;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sube;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sube;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&supe;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&supe;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&oplus;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&oplus;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&otimes;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&otimes;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&perp;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&perp;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sdot;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sdot;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&loz;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&loz;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+
+
+     //greek characters
+     "&Alpha;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Alpha;",
+        "latex"    : "A",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&alpha;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&alpha;",
+        "latex"    : "\\alpha",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Beta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Beta;",
+        "latex"    : "B",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&beta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&beta;",
+        "latex"    : "\\beta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Gamma;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Gamma;",
+        "latex"    : "\\Gamma",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&gamma;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&gamma;",
+        "latex"    : "\\gamma",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Delta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Delta;",
+        "latex"    : "\\Delta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&delta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&delta;",
+        "latex"    : "\\delta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Epsilon;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Epsilon;",
+        "latex"    : "E",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&epsilon;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&epsilon;",
+        "latex"    : "\\epsilon",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Zeta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Zeta;",
+        "latex"    : "Z",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&zeta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&zeta;",
+        "latex"    : "\\zeta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Eta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Eta;",
+        "latex"    : "H",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&eta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&eta;",
+        "latex"    : "\\eta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Theta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Theta;",
+        "latex"    : "\\Theta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&theta;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&theta;",
+        "latex"    : "\\theta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&thetasym;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&thetasym;",
+        "latex"    : "\\vartheta",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Iota;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Iota;",
+        "latex"    : "I",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&iota;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&iota;",
+        "latex"    : "\\iota",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Kappa;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Kappa;",
+        "latex"    : "K",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&kappa;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&kappa;",
+        "latex"    : "\\kappa",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Lambda;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Lambda;",
+        "latex"    : "\\Lambda",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&lambda;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&lambda;",
+        "latex"    : "\\lambda",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Mu;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Mu;",
+        "latex"    : "M",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&mu;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&mu;",
+        "latex"    : "\\mu",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Nu;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Nu;",
+        "latex"    : "N",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&nu;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&nu;",
+        "latex"    : "\\nu",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Xi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Xi;",
+        "latex"    : "\\Xi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&xi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&xi;",
+        "latex"    : "\\xi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Omicron;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Omicron;",
+        "latex"    : "O",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&omicron;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&omicron;",
+        "latex"    : "o",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+     "&Pi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Pi;",
+        "latex"    : "\\Pi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&pi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&pi;",
+        "latex"    : "\\pi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Rho;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Rho;",
+        "latex"    : "P",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&rho;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&rho;",
+        "latex"    : "\\rho",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Sigma;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Sigma;",
+        "latex"    : "\\Sigma",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sigma;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sigma;",
+        "latex"    : "\\sigma",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&sigmaf;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&sigmaf;",
+        "latex"    : "\\varsigma",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Tau;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Tau;",
+        "latex"    : "T",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&tau;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&tau;",
+        "latex"    : "\\tau",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Upsilon;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Upsilon;",
+        "latex"    : "\\Upsilon",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&upsilon;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&upsilon;",
+        "latex"    : "\\upsilon",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Phi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Phi;",
+        "latex"    : "\\Phi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&phi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&phi;",
+        "latex"    : "\\phi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&piv;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&piv;",
+        "latex"    : "\\varpi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Chi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Chi;",
+        "latex"    : "X",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&chi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&chi;",
+        "latex"    : "\\chi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Psi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Psi;",
+        "latex"    : "\\Psi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&psi;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&psi;",
+        "latex"    : "\\psi",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&Omega;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&Omega;",
+        "latex"    : "\\Omega",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+     "&omega;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&omega;",
+        "latex"    : "\\omega",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+     "&upsih;":
+     {
+        "asc7"     : "",
+        "utf8"     : "",
+        "html"     : "&upsih;",
+        "latex"    : "",
+        "adciidoc" : "",
+        "_descr"   : ""
+     },
+
+  }
+}
+
